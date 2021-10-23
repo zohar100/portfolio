@@ -1,0 +1,13 @@
+.ImageLink {
+  text-decoration: none;
+  display: flex;
+  flex-flow: column;
+  color: black;
+}
+
+.ImageLink img {
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+  align-self: center;
+}

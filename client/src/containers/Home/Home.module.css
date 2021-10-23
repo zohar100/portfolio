@@ -1,0 +1,134 @@
+.Home {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+}
+/* Left side */
+.TextArea {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.TextArea h1 {
+  font-family: "Inconsolata";
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 0.17em;
+  margin-bottom: 18px;
+}
+
+.TextArea h2 span {
+  font-family: "Inconsolata";
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  line-height: 29px;
+  text-align: center;
+  letter-spacing: 0.17em;
+  margin: 0;
+}
+
+.TextArea span {
+  margin-top: 18px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+}
+
+/* Right side */
+.LinksAndProfile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  font-family: "Inter", sans-serif;
+}
+
+.ImageDiv {
+  position: relative;
+  width: 370px;
+  height: 412px;
+}
+
+.ImageDiv button {
+  position: absolute;
+  transform: translate(-120%, 90%);
+}
+
+.MainImage {
+  width: 100%;
+  height: 100%;
+}
+
+.Links {
+  width: 370px;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.AboutMeButton {
+  width: 370px;
+}
+
+.AboutMeButton button {
+  width: 100%;
+  margin-top: 18px;
+}
+
+@media (min-width: 600px) {
+  .Home {
+    flex-flow: row;
+  }
+  .LinksAndProfile {
+    width: 50%;
+  }
+
+  .TextArea {
+    margin-bottom: 0;
+    width: 50%;
+  }
+}
+
+@media (min-width: 600px) {
+  @media (max-width: 870px) {
+    .TextArea h1 {
+      font-size: 34px;
+    }
+
+    .TextArea h2 {
+      font-size: 24px;
+    }
+
+    .TextArea span {
+      font-size: 16px;
+    }
+
+    .ImageDiv {
+      width: 270px;
+      height: 312px;
+    }
+
+    .ImageDiv button {
+      transform: translate(-90%, 90%);
+    }
+
+    .Links {
+      width: 270px;
+    }
+
+    .AboutMeButton {
+      width: 270px;
+    }
+  }
+}

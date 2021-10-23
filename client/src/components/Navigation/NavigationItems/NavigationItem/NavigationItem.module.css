@@ -1,0 +1,25 @@
+.NavigationItem {
+  padding: 10px 16px;
+}
+
+.NavigationItem a {
+  font-size: 16px;
+  cursor: pointer;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Inter", sans-serif;
+}
+
+@media (min-width: 600px) {
+  .NavigationItem {
+    padding: 0px 16px;
+  }
+
+  .NavigationItem a {
+  }
+
+  .NavigationItem a:hover,
+  .NavigationItem a:active,
+  .NavigationItem a.active {
+  }
+}

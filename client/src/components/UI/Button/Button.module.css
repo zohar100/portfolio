@@ -1,0 +1,65 @@
+.Button {
+  /* width: 260px;
+  height: 50px; */
+  height: 50px;
+  width: 100%;
+  padding: 10px 40px;
+  border: none;
+  border-radius: 30px;
+  background: #5fa1d5;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-size: 24px;
+  color: #fff;
+  font-family: "inter", sans-serif;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+
+.Button:hover {
+  background: #4395d3;
+}
+
+.Primary {
+  background: #5fa1d5;
+}
+
+.Primary:hover {
+  background: #4395d3;
+}
+
+.Secondary {
+  background: #51b960;
+}
+
+.Secondary:hover {
+  background: #2db842;
+}
+
+.Special {
+  background: #51b960;
+  width: 80px;
+  height: 80px;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 100%;
+  outline: 8px solid rgba(81, 185, 96, 0.5);
+  animation-name: growShrink;
+  animation-duration: 0.7s;
+  animation-iteration-count: infinite;
+}
+
+.Special:hover {
+  background: #24af39;
+}
+
+@keyframes growShrink {
+  0% {
+    outline: 4px solid rgba(81, 185, 96, 0.5);
+  }
+  50% {
+    outline: 13px solid rgba(81, 185, 96, 0.5);
+  }
+  100% {
+    outline: 4px solid rgba(81, 185, 96, 0.5);
+  }
+}
