@@ -1,0 +1,28 @@
+.ProjectCard {
+  max-width: 400px;
+  background-color: rgba(95, 161, 213, 0.25);
+}
+
+.ProjectCard img {
+  width: 100%;
+}
+
+.ProjectCard .Description {
+  font-family: "Inter", "sans-serif";
+  padding: 0 18px;
+}
+
+.ProjectCard .Description h3 {
+  font-size: 18px;
+}
+
+.ProjectCard .Actions {
+  display: flex;
+  padding: 10px;
+}
+
+.ProjectCard .Actions button {
+  font-size: 16px;
+  height: 40px;
+  margin: 8px;
+}

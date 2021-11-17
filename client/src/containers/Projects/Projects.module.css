@@ -1,4 +1,41 @@
 .Projects {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+}
+
+.Headers {
+  padding-left: 50px;
+  font-family: "Inter", "sans-serif";
+}
+
+.Headers h1 {
+  font-size: 38px;
+  margin-bottom: 0;
+}
+
+.Headers h2 {
+  font-size: 24px;
+}
+
+.Headers span {
+  font-size: 16px;
+}
+
+.Headers span a {
+  text-decoration: none;
+  color: #0d3de4;
+}
+
+.ProjectsCards {
+  margin-top: 20px;
+  padding: 0 45px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.ProjectsCards > div {
+  flex: 50%; /* or - flex: 0 50% - or - flex-basis: 50% - */
+  margin: 5px;
+  /*demo*/
 }

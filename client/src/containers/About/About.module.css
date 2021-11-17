@@ -1,4 +1,93 @@
 .About {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+}
+.About h1 {
+  font-family: "Inter", sans-serif;
+  font-size: 38px;
+  margin-left: 50px;
+}
+
+.Skills {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+  justify-items: center;
+  align-items: center;
+  margin-top: 45px;
+}
+
+.Skills div {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 230px;
+  text-align: center;
+}
+
+.Skills div p {
+  font-family: "Inter", sans-serif;
+  line-height: 26px;
+}
+
+.Sentences {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.Sentences div {
+  width: 240px;
+  background: #51b960;
+  outline: 2px solid rgba(81, 185, 96, 0.5);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.Sentences div p {
+  color: #fff;
+}
+
+.Technologies {
+  background-color: rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 100px;
+  padding: 18px;
+}
+
+.Technologies svg {
+  margin: 8px;
+  flex: 1 125px;
+}
+
+@media (min-width: 600px) {
+  .Skills {
+    flex-flow: row;
+  }
+
+  .Skills div {
+    width: 230px;
+  }
+}
+
+@media (min-width: 600px) {
+  @media (max-width: 900px) {
+    .Skills {
+      flex-flow: column;
+    }
+    .Skills div {
+      width: 400px;
+      padding: 18px;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .Sentences div {
+    width: 350px;
+  }
 }
