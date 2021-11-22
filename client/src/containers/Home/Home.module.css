@@ -3,6 +3,7 @@
   min-height: 100vh;
   display: flex;
   flex-flow: column;
+  padding: 35px 0;
 }
 /* Left side */
 .TextArea {

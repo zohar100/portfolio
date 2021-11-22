@@ -1,4 +1,88 @@
 .Contact {
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 35px 0;
+}
+
+.ContactHeaders {
+  font-family: "Inter", "sans-serif";
+  padding-left: 50px;
+  margin-bottom: 20px;
+}
+.ContactHeaders h1 {
+  font-size: 38px;
+  margin: 0;
+  margin-bottom: 24px;
+}
+
+.ContactHeaders span {
+  font-size: 18px;
+}
+
+.ContactDiv {
+  display: flex;
+  flex-direction: column;
+}
+
+.ContactDiv .ContactIllustration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ContactDiv .ContactIllustration img {
+  width: 415px;
+  height: 412px;
+}
+
+.ContactDiv .ContactForm {
+  justify-content: center;
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.ContactDiv .ContactForm form {
+  display: flex;
+  flex-direction: column;
+  max-width: 540px;
+  width: 90%;
+}
+
+.ContactDiv .ContactForm form button {
+  margin-top: 20px;
+}
+
+.ContactDiv .ContactForm .ContactFormRow {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1035px) {
+  .ContactDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .ContactDiv .ContactForm {
+    padding: 0px;
+  }
+
+  .ContactDiv .ContactForm form {
+    display: flex;
+    flex-direction: column;
+    max-width: 540px;
+    width: 540px;
+  }
+
+  .ContactDiv .ContactForm .ContactFormRow {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .ContactDiv .ContactForm .ContactFormRow input {
+    width: 45%;
+  }
 }

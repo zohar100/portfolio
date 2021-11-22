@@ -1,0 +1,21 @@
+.InputElement {
+  border-radius: 30px;
+  border: 1px solid #5fa1d5;
+  height: 40px;
+  padding: 10px;
+  margin: 8px 0px;
+  font-size: 16px;
+  font-family: "Inter", "sans-serif";
+}
+
+.TextArea {
+  min-height: 171px;
+  max-height: 200px;
+  resize: vertical;
+}
+
+.InputElement:focus,
+.InputElement:focus {
+  outline: none;
+  border: 2px solid #5fa1d5;
+}

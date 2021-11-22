@@ -1,6 +1,7 @@
 .About {
   width: 100%;
   min-height: 100vh;
+  padding: 35px 0;
 }
 .About h1 {
   font-family: "Inter", sans-serif;
