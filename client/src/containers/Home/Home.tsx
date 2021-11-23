@@ -39,15 +39,15 @@ return (
             </div>
             <div className={classes.Links}>
                 <ImageLink 
-                svg={LinkedinIcon}
+                svg={()=><LinkedinIcon/>}
                 href="https://www.linkedin.com/in/zohar-banai-377085201/">
                 Linkedin </ImageLink>
                 <ImageLink 
-                svg={GithubIcon}
+                svg={()=><GithubIcon/>}
                 href="https://github.com/zohar100">
                 Github </ImageLink>
                 <ImageLink 
-                svg={ResumeIcon}
+                svg={() => <ResumeIcon/>}
                 href="https://github.com/">
                 Resume </ImageLink>
             </div>

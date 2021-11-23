@@ -3,6 +3,7 @@ import * as React from "react";
 import Hoc from '../hoc/Hoc';
 import Toolbar from '../../components/Navigation/Toolbar/Toolbar';
 import SideDrawer from '../../components/Navigation/SideDrawer/SideDrawer';
+import Footer from '../../components/Footer/Footer';
 import classes from './Layout.module.css';
 
 interface Props {
@@ -23,6 +24,7 @@ const Layout:FC<Props> = (props) => {
             <main className={classes.Layout}>
                 {props.children}
             </main>
+            <Footer/>
         </Hoc>
     )
 }
