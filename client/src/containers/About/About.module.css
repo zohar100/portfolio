@@ -3,33 +3,71 @@
   min-height: 100vh;
   padding: 35px 0;
 }
-.About h1 {
+
+.Headers {
+  margin-left: 50px;
+  border-left: 5px solid #51b960;
+  padding-left: 18px;
+}
+
+.Headers h1 {
   font-family: "Inter", sans-serif;
   font-size: 38px;
-  margin-left: 50px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.Headers span {
+  font-family: "Inter", sans-serif;
+  font-size: 18px;
 }
 
 .Skills {
   display: flex;
   flex-flow: column;
   justify-content: space-around;
-  justify-items: center;
   align-items: center;
+  justify-items: center;
   margin-top: 45px;
 }
 
-.Skills div {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  width: 230px;
-  text-align: center;
+.Skills .Line {
+  width: 5px;
+  background-color: rgba(95, 161, 213, 75%);
+  border-radius: 10px;
 }
 
-.Skills div p {
+.SkillSection {
+  background-color: rgba(0, 0, 0, 5%);
+  border-radius: 5px;
+  display: flex;
+  flex-flow: column;
+  width: 350px;
+  text-align: center;
+  margin-bottom: 18px;
+  padding: 20px;
+  box-shadow: 0px 0px 30px rgb(0 0 0 / 32%);
+}
+
+.SkillSection div {
+  width: 100%;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+
+.SkillSection div h2 {
+  font-size: 38px;
+  color: #5fa1d5;
+  margin: 0;
+}
+
+.SkillSection p {
   font-family: "Inter", sans-serif;
   line-height: 26px;
+  font-size: 14px;
+  text-align: start;
 }
 
 .Sentences {
@@ -65,27 +103,26 @@
   flex: 1 125px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 1150px) {
   .Skills {
     flex-flow: row;
+    align-items: normal;
   }
 
-  .Skills div {
-    width: 230px;
+  .Skills .Line {
+    width: 5px;
+    background-color: rgba(95, 161, 213, 75%);
+    border-radius: 10px;
   }
 }
 
-@media (min-width: 600px) {
+/* @media (min-width: 600px) {
   @media (max-width: 900px) {
     .Skills {
       flex-flow: column;
     }
-    .Skills div {
-      width: 400px;
-      padding: 18px;
-    }
   }
-}
+} */
 
 @media (min-width: 600px) {
   .Sentences div {

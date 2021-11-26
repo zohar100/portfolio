@@ -6,7 +6,7 @@ import MailIllustration from '../../assets/images/mail-illustration.png';
 
 const Contact:FC = () => (
     <section id="contact" className={classes.Contact}>
-        <div className={classes.ContactHeaders}>
+        <div className={classes.Headers}>
             <h1>Contact Me</h1>
             <span>Send me a message, make sure I will answer!</span>
         </div>
