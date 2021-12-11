@@ -7,9 +7,12 @@ const projectSchema = new Schema({
         required: true,
         unique: true,
     },
+    technologies: [{
+        type: String,
+    }],
     image: {
         type: String,
-        required: true
+        required: false
     },
     description: {
         type: String,

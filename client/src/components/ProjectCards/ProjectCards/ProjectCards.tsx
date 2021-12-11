@@ -10,8 +10,8 @@ const ProjectCards:FC<Props> = (props) => {
         props.projects.map((project: any) => (
             <ProjectCard
             key={project.id}
-            imgSrc={project.imgSrc}
             projectName={project.name}
+            technologies={project.technologies}
             projectDescription={project.description}
             />
         ))

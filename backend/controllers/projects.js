@@ -5,30 +5,12 @@ const request = require('request');
 const repoImages = require('repo-images')
 
 module.exports.index = catchAsync(async (req, res) => {
-    const projects = [];
-
-    await request.get('https://api.github.com/users/zohar100/repos',
-    {
-        headers: {
-            'user-agent': 'request',
-            'X-RateLimit-Limit': 10000
-        },
-        json: true
-    }, 
-    async (err, response, body) => {
-        // await body.map(project => {
-        //     projects.push({
-        //         name: project.name,
-        //         description: project.description,
-        //         repository: project.html_url,
-        //         image: `https://raw.githubusercontent.com/zohar100/${project.name}/master/uploads/home-page.png`
-        //     })
-        // })
-        res.json(body);
-    });
-
-    // const projects = await Project.find();
-    
+    const projects = await Project.find();
+    if(projects.length) { 
+        console.log(`[PROJECTS-GET] - send ${projects.length} projects`);
+        return res.json(projects);
+    };
+    throw new ServerError('There is some problem try later', 400);
 });
 
 module.exports.show = catchAsync(async (req, res) => {

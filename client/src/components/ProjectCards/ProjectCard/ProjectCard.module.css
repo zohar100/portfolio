@@ -1,28 +1,53 @@
 .ProjectCard {
   max-width: 400px;
   background-color: rgba(95, 161, 213, 0.25);
+  padding: 18px;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.25);
 }
 
-.ProjectCard img {
-  width: 100%;
+.ProjectCard .ProjectName {
+  font-family: "Inter", "sans-serif";
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.ProjectCard .Technologies {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+.ProjectCard .Technologies svg:first-child {
+  margin-left: 0;
+}
+
+.ProjectCard .Technologies svg:last-child {
+  margin-right: 0;
+}
+
+.ProjectCard .Technologies svg {
+  width: 40px;
+  height: 40px;
+  margin: 0 20px;
 }
 
 .ProjectCard .Description {
   font-family: "Inter", "sans-serif";
-  padding: 0 18px;
-}
-
-.ProjectCard .Description h3 {
-  font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .ProjectCard .Actions {
   display: flex;
-  padding: 10px;
+  font-size: 12px;
+  justify-content: space-between;
 }
 
 .ProjectCard .Actions button {
-  font-size: 16px;
-  height: 40px;
-  margin: 8px;
+  font-size: 14px;
+  height: 35px;
+  width: 45%;
 }
