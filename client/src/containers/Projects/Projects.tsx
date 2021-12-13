@@ -6,6 +6,11 @@ import ProjectCards from '../../components/ProjectCards/ProjectCards/ProjectCard
 const Projects:FC = () => {
     const [projects, status] = useProjects();
 
+    let projectsOrLoading:any = 'Loading...';
+    if(status !== 'loading' && status !== 'error') {
+        projectsOrLoading = (<ProjectCards projects={projects}/>);
+    }
+
     return(
         <section id="projects" className={classes.Projects}>
             <div className={classes.Headers}>
@@ -15,10 +20,7 @@ const Projects:FC = () => {
             </div>
             <div className={classes.ProjectsCards}>
                 {
-                    status !== 'success' ? (
-
-                        <ProjectCards projects={projects}/>
-                    ) : 'Loading...'
+                    projectsOrLoading
                 }
             </div>
         </section>

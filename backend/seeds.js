@@ -41,13 +41,19 @@ data = [
 
 //function for seeding the database with the data
 async function seedDB() {
-    const res = await Project.deleteMany();
-    if(res) {
-        console.log('Projects Deleted Successfully');
+    try {
+        const res = await Project.deleteMany();
+        if(res) {
+            console.log('Projects Deleted Successfully');
+        }
+        
+     
+        await Project.create(data)
+        console.log('Project Added Successfully')
+    }catch(err) {
+        console.log(err);
     }
-    
-    await Project.create(data);
-    console.log("Project Created");
 }
+    
 
 module.exports = seedDB;
