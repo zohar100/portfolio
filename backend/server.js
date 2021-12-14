@@ -14,11 +14,11 @@ app.use(express.json());
 
 //DB CONFIGURATION
 // const uri = process.env.ATLAS_URI;
-main().catch(err => console.log(err));
-
 async function main() {
   await mongoose.connect('mongodb://localhost:27017/portfilio');
 }
+main().catch(err => console.log(err));
+
 
 seeds();
 
