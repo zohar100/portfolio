@@ -6,6 +6,7 @@ interface Props {
     elementConfig?: any;
     value?: any;
     changed?: any;
+    handleChanges?: any;
 }
 
 const Input:FC<Props> = (props) => {
@@ -16,30 +17,26 @@ const Input:FC<Props> = (props) => {
             inputElement = <input 
                             className={classes.InputElement} 
                             { ...props.elementConfig } 
-                            value={props.value}
-                            onChange={props.changed} />
+                            {...props.handleChanges} />
             break;
         case('textarea'):
             inputElement = <textarea 
                             className={[classes.InputElement, classes.TextArea].join(' ')} 
                             { ...props.elementConfig } 
-                            value={props.value}
-                            onChange={props.changed} />
+                            {...props.handleChanges} />
             break;
         case('file'):
             inputElement = <input 
                             className={classes.InputElementFile} 
                             { ...props.elementConfig } 
-                            value={props.value}
-                            onChange={props.changed} 
+                            {...props.handleChanges}
                             id="fileUpload"/>
             break;
         case('select'):
         inputElement = (
             <select
                 className={classes.InputElement} 
-                value={props.value}
-                onChange={props.changed}>
+                {...props.handleChanges}>
                 {props.elementConfig.options.map((option: any) => (
                     <option 
                         value={option.value}
@@ -54,8 +51,7 @@ const Input:FC<Props> = (props) => {
             inputElement = <input 
                             className={classes.InputElement}
                             { ...props.elementConfig } 
-                            value={props.value}
-                            onChange={props.changed} />
+                            {...props.handleChanges} />
     }
 
     return (inputElement)
