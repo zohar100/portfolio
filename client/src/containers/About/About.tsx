@@ -1,20 +1,21 @@
-import { FC } from 'react';
+import { FC} from 'react';
 import classes from './About.module.css';
 import { PersonIcon, AwardsIcon, 
         SkillsIcon, MySqlIcon, MongodbIcon,
         JavaScriptIcon, PhpIcon, NodeIcon, ReactIcon, 
         TypeScriptIcon, HtmlIcon, CssIcon } from '../../components/Svgs/Svgs';
 
-import ProfileSecond from '../../assets/images/profile-second.png';
+// import ProfileSecond from '../../assets/images/profile-second.png';
 
-const About:FC = () => (
+const About:FC = () => {
+    return(
     <section id="about" className={classes.About}>
         <div className={classes.Headers}>
             <h1>About me</h1>
-            <span>Who Am I? Know mr better. </span>
+            <span>Who Am I ? Know me better. </span>
         </div>
        <div className={classes.Skills}>
-           <div className={classes.SkillSection}>
+           <div className={classes.SkillSection} data-aos="fade-right">
                <div>
                     <h2>Who Am I</h2>
                     <PersonIcon/>
@@ -30,8 +31,8 @@ const About:FC = () => (
 
                 </p>
            </div>
-           <div className={classes.Line}></div>
-           <div className={classes.SkillSection}>
+           <div className={classes.Line} data-aos="fade-up"></div>
+           <div className={classes.SkillSection} data-aos="fade-right">
                <div>
                     <h2>Awards</h2>
                     <AwardsIcon/>
@@ -47,8 +48,8 @@ const About:FC = () => (
                 my role in the project was a fullstack programmer. In this capacity, I was responsible for user authentication on both the client and server side.
                 </p>
            </div>
-           <div className={classes.Line}></div>
-           <div className={classes.SkillSection}>
+           <div className={classes.Line} data-aos="fade-up"></div>
+           <div className={classes.SkillSection} data-aos="fade-right">
                <div>
                     <h2>My Skills</h2>
                     <SkillsIcon/>
@@ -60,7 +61,7 @@ const About:FC = () => (
                 </p>
            </div>
        </div>
-       <div className={classes.Sentences}>
+       {/* <div className={classes.Sentences}>
            <img src={ProfileSecond} alt='second-profile'/>
             <div>
                 <p>
@@ -68,7 +69,7 @@ const About:FC = () => (
                     cursus sit magna vel. Pellentesque est at vestibulum vitae  dolor rutrum. Metus dolor ultrices arcu laoreet amet mauris.
                 </p>
             </div>
-       </div>
+       </div> */}
        <div className={classes.Technologies}>
             <MySqlIcon/>
             <MongodbIcon/>
@@ -81,6 +82,6 @@ const About:FC = () => (
             <CssIcon/>
        </div>
     </section>
-);
+)};
 
 export default About;

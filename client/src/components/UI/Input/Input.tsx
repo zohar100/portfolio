@@ -7,36 +7,41 @@ interface Props {
     value?: any;
     changed?: any;
     handleChanges?: any;
+    label: string;
+    errors: any; 
 }
 
 const Input:FC<Props> = (props) => {
     let inputElement = null;
+    let inputClasses = [classes.InputElement];
+    if(props.errors[props.label]) inputClasses.push(classes.InputError);
 
     switch(props.elementType) {
         case('input'):
             inputElement = <input 
-                            className={classes.InputElement} 
+                            className={inputClasses.join(' ')}  
                             { ...props.elementConfig } 
-                            {...props.handleChanges} />
+                            {...props.handleChanges(props.label)} />
             break;
         case('textarea'):
+            inputClasses.push(classes.TextArea)
             inputElement = <textarea 
-                            className={[classes.InputElement, classes.TextArea].join(' ')} 
+                            className={inputClasses.join(' ')} 
                             { ...props.elementConfig } 
-                            {...props.handleChanges} />
+                            {...props.handleChanges(props.label)} />
             break;
         case('file'):
             inputElement = <input 
-                            className={classes.InputElementFile} 
+                            className={inputClasses.join(' ')} 
                             { ...props.elementConfig } 
-                            {...props.handleChanges}
+                            {...props.handleChanges(props.label)}
                             id="fileUpload"/>
             break;
         case('select'):
         inputElement = (
             <select
-                className={classes.InputElement} 
-                {...props.handleChanges}>
+                className={inputClasses.join(' ')}  
+                {...props.handleChanges(props.label)}>
                 {props.elementConfig.options.map((option: any) => (
                     <option 
                         value={option.value}
@@ -49,12 +54,16 @@ const Input:FC<Props> = (props) => {
             break;
         default:
             inputElement = <input 
-                            className={classes.InputElement}
+                            className={inputClasses.join(' ')} 
                             { ...props.elementConfig } 
-                            {...props.handleChanges} />
+                            {...props.handleChanges(props.label)} />
     }
 
-    return (inputElement)
+    return (
+    <div className={classes.InputWrapper}>
+        {inputElement}
+    </div>
+        )
 }
 
 export default Input;

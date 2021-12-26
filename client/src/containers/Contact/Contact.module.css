@@ -84,7 +84,4 @@
     justify-content: space-between;
     flex-direction: row;
   }
-  .ContactDiv .ContactForm .ContactFormRow input {
-    width: 45%;
-  }
 }

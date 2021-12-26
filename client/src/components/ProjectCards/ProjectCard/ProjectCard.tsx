@@ -29,7 +29,7 @@ const techNameToIcon:any = {
 
 
 const ProjectCard:FC<Props> = (props) => (
-    <div className={classes.ProjectCard}>
+    <div className={classes.ProjectCard} data-aos="fade-up">
         <h3 className={classes.ProjectName}>{props.projectName}</h3>
         <div className={classes.Technologies}>
             {props.technologies.map((tech:any) => techNameToIcon[tech])}

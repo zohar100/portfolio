@@ -42,7 +42,7 @@ data = [
 //function for seeding the database with the data
 async function seedDB() {
     try {
-        const res = await Project.deleteMany();
+        const res = await Project.collection.drop();;
         if(res) {
             console.log("Projects Deleted Successfully");
         }
