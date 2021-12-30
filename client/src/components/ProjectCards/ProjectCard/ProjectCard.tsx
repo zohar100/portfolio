@@ -10,6 +10,7 @@ interface Props {
     projectName?: string;
     projectDescription?: string;
     technologies: Array<string>;
+    repository?: string;
 }
 
 const techNameToIcon:any = {
@@ -41,8 +42,12 @@ const ProjectCard:FC<Props> = (props) => (
         </div>
         <div className={classes.Actions}>
             <Button 
+            link={true}
+            to={props.repository}
             btnType={'Primary'}>Repository</Button>
             <Button
+            link={true}
+            to={props.repository}
             btnType={'Secondary'}>Go to site</Button>
         </div>
     </div>

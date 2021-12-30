@@ -1,0 +1,10 @@
+.Modal {
+  /* width: 330px; */
+  min-width: 340px;
+  position: fixed;
+  z-index: 101;
+  left: 50%;
+  top: 35%;
+  transform: translateX(-50%);
+  border-radius: 5px;
+}

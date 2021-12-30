@@ -1,4 +1,4 @@
-import { FC, useRef } from 'react';
+import { FC, useRef, useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import emailjs from 'emailjs-com';
 import classes from './Contact.module.css';
@@ -6,7 +6,10 @@ import Input from '../../components/UI/Input/Input';
 import Button from '../../components/UI/Button/Button';
 import MailIllustration from '../../assets/images/mail-illustration.png';
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup";
+import * as yup from 'yup';
+import Backdrop from '../../components/UI/Backdrop/Backdrop';
+import Modal from '../../components/UI/Modal/Modal';
+import Spinner from '../../components/UI/Spinner/Spinner';
 
 const schema = yup.object({
   name: yup.string().required().max(25),
@@ -24,25 +27,59 @@ interface MailFormInput {
 
 const Contact:FC = () => {
     const form:any = useRef<MailFormInput>();
-    const { register, handleSubmit, formState: { errors } } = useForm<MailFormInput>({
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<MailFormInput>({
         resolver: yupResolver(schema)
     });
+    const [successMsg, setSuccessMsg] = useState<boolean>(false);
+    const [loading, setLoading] = useState<boolean>(false);
+
+    useEffect(() => {
+        if(successMsg || loading){
+            document.body.style.overflow = 'hidden';
+        }else {
+            document.body.style.overflow = 'unset';
+        }
+    }, [successMsg, loading])
 
     const sendEmail = () => {
-        if(!errors) {
-            emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE || '', process.env.REACT_APP_EMAILJS_TEMPLATE || '', form.current, process.env.REACT_APP_EMAILJS_USER || '')
-            .then((result) => {
-                console.log(result.text);
-            }, (error) => {
-                console.log(error.text);
-            });
-        }else{
-            alert("Check ReCaptcha")
-        }
+        setLoading(true);
+        emailjs.sendForm(process.env.REACT_APP_EMAILJS_SERVICE || '', process.env.REACT_APP_EMAILJS_TEMPLATE || '', form.current, process.env.REACT_APP_EMAILJS_USER || '')
+        .then((result) => {
+            console.log(result.text);
+            setLoading(false);
+            setSuccessMsg(true);
+            reset();
+        }, (error) => {
+            setLoading(false);
+            console.log(error.text);
+        });
     };
+
+    let successMsgModal = (
+        <>
+            <Modal show={successMsg}>
+                <div data-aos="slide-up" className={classes.SuccessMsg}>
+                    <h3>Thank you!</h3>
+                    <p>Your form submission has been received.</p>
+
+                    <span onClick={() => setSuccessMsg(false)}>← Back to our site</span>
+                </div>
+            </Modal>
+        </>
+    )
+
+    let lodaingSpinner = null;
+    if(loading) {
+        lodaingSpinner = (
+            <Spinner/>
+        )
+    }
 
  return (
     <section id="contact" className={classes.Contact}>
+        <Backdrop show={successMsg || loading ? true : false} type="secondary"/>
+        {lodaingSpinner}
+        {successMsgModal}
         <div className={classes.Headers}>
             <h1>Contact Me</h1>
             <span>Send me a message, make sure I will answer!</span>
@@ -51,7 +88,7 @@ const Contact:FC = () => {
             <div className={classes.ContactIllustration} data-aos="fade-right">
                 <img src={MailIllustration} alt={'mail-illustration'}/>
             </div>
-            <div className={classes.ContactForm} data-aos="fade-left">
+            <div className={classes.ContactForm} data-aos="fade-up">
                 <form ref={form} onSubmit={handleSubmit(sendEmail)}>
                     <div className={classes.ContactFormRow}>
                         <Input                       
@@ -84,7 +121,7 @@ const Contact:FC = () => {
                     elementConfig={{
                         placeholder: 'Write me here...'
                     }}/>
-                    <Button btnType={'Primary'} clicked={handleSubmit(sendEmail)}>Send</Button>
+                    <Button btnType={'Primary'}>Send</Button>
                 </form>
             </div>
         </div>

@@ -13,6 +13,7 @@ const ProjectCards:FC<Props> = (props) => {
             projectName={project.name}
             technologies={project.technologies}
             projectDescription={project.description}
+            repository={project.repository}
             />
         ))
     )

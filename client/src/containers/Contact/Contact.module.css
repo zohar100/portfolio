@@ -35,8 +35,8 @@
 }
 
 .ContactDiv .ContactIllustration img {
-  width: 415px;
-  height: 412px;
+  width: 376px;
+  height: 373px;
 }
 
 .ContactDiv .ContactForm {
@@ -62,6 +62,30 @@
   flex-direction: column;
 }
 
+.SuccessMsg {
+  padding: 25px 18px;
+  background-color: #51b960;
+  border-radius: 5px;
+  font-family: "Inter", "sans-serif";
+}
+
+.SuccessMsg h3 {
+  margin: 0 0 18px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.SuccessMsg p {
+  font-size: 16px;
+  margin: 0 0 18px 0;
+}
+
+.SuccessMsg span {
+  cursor: pointer;
+  font-size: 16px;
+  color: #004b85;
+}
+
 @media (min-width: 1035px) {
   .ContactDiv {
     display: flex;
@@ -83,5 +107,10 @@
   .ContactDiv .ContactForm .ContactFormRow {
     justify-content: space-between;
     flex-direction: row;
+  }
+
+  .ContactDiv .ContactIllustration img {
+    width: 415px;
+    height: 412px;
   }
 }

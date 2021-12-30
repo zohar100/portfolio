@@ -31,14 +31,27 @@
 
 .ProjectsCards {
   margin-top: 20px;
-  padding: 0 45px;
+  padding: 10px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: left;
+  align-items: center;
 }
 
 .ProjectsCards > div {
   flex: 50%; /* or - flex: 0 50% - or - flex-basis: 50% - */
-  margin: 5px;
-  /*demo*/
+  margin: auto;
+  margin-bottom: 25px;
+}
+
+@media (min-width: 600px) {
+  .ProjectsCards {
+    padding: 0 45px;
+  }
+
+  .ProjectsCards > div {
+    margin: 25px;
+    margin-left: 0;
+    /*demo*/
+  }
 }
