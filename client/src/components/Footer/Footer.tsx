@@ -11,14 +11,18 @@ const Footer:FC = () => (
         </div>
         <div className={classes.Links}>
             <ImageLink 
+            target={'blank'}
             svg={()=><LinkedinIcon color="white"/>}
             href="https://www.linkedin.com/in/zohar-banai-377085201/"/>
             <ImageLink 
+            target={'blank'}
             svg={()=><GithubIcon color="white"/>}
             href="https://github.com/zohar100"/>
             <ImageLink 
+            download
+            target={'blank'}
             svg={()=><ResumeIcon color="white"/>}
-            href="https://github.com/"/>
+            href="/files/zohar-banai.pdf"/>
         </div>
     </div>
 );

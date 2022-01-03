@@ -71,7 +71,7 @@ const Contact:FC = () => {
     let lodaingSpinner = null;
     if(loading) {
         lodaingSpinner = (
-            <Spinner/>
+            <Spinner fixed={true}/>
         )
     }
 

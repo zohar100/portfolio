@@ -10,10 +10,6 @@ const projectSchema = new Schema({
     technologies: [{
         type: String,
     }],
-    image: {
-        type: String,
-        required: false
-    },
     description: {
         type: String,
         required: true

@@ -1,16 +1,9 @@
 import { FC } from 'react';
 import classes from './Projects.module.css';
-import { useProjects } from '../../hooks/useProjects';
+import projects from '../../data.json';
 import ProjectCards from '../../components/ProjectCards/ProjectCards/ProjectCards';
 
 const Projects:FC = () => {
-    const [projects, status] = useProjects();
-
-    let projectsOrLoading:any = 'Loading...';
-    if(status !== 'loading' && status !== 'error') {
-        projectsOrLoading = (<ProjectCards projects={projects}/>);
-    }
-
     return(
         <section id="projects" className={classes.Projects}>
             <div className={classes.Headers}>
@@ -19,9 +12,7 @@ const Projects:FC = () => {
                 <span>You can find all of them in my <a href="https://github.com/">Github profile </a></span>
             </div>
             <div className={classes.ProjectsCards}>
-                {
-                    projectsOrLoading
-                }
+                <ProjectCards projects={projects}/>
             </div>
         </section>
     )

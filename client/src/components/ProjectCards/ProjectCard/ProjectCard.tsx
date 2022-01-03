@@ -1,4 +1,5 @@
 import { FC } from 'react';
+import React from 'react';
 import Button from '../../UI/Button/Button';
 import classes from './ProjectCard.module.css';
 import {MySqlIcon, MongodbIcon,
@@ -11,6 +12,7 @@ interface Props {
     projectDescription?: string;
     technologies: Array<string>;
     repository?: string;
+    live?: string;
 }
 
 const techNameToIcon:any = {
@@ -21,7 +23,7 @@ const techNameToIcon:any = {
     react: <ReactIcon/>,
     html: <HtmlIcon/>,
     css: <CssIcon/>,
-    mysql: <MySqlIcon/>,
+    mysql: <MySqlIcon />,
     mongodb: <MongodbIcon/>,
     bootstrap: <BootstrapIcon/>,
     jquery: <JqueryIcon/>,
@@ -33,7 +35,7 @@ const ProjectCard:FC<Props> = (props) => (
     <div className={classes.ProjectCard} data-aos="fade-up">
         <h3 className={classes.ProjectName}>{props.projectName}</h3>
         <div className={classes.Technologies}>
-            {props.technologies.map((tech:any) => techNameToIcon[tech])}
+            {props.technologies.map((tech:any, i) => <React.Fragment key={i}>{techNameToIcon[tech]}</React.Fragment>)}
         </div>
         <div className={classes.Description}>
             <p>
@@ -47,8 +49,11 @@ const ProjectCard:FC<Props> = (props) => (
             btnType={'Primary'}>Repository</Button>
             <Button
             link={true}
-            to={props.repository}
-            btnType={'Secondary'}>Go to site</Button>
+            to={props.live}
+            btnType={'Secondary'}
+            disabled={props.live && props.live.length > 0 ? false : true}>
+                {props.live && props.live.length > 0 ? 'Go to site' : 'Coming soon'}
+            </Button>
         </div>
     </div>
 )

@@ -9,12 +9,14 @@ interface Props {
     hashLink?: boolean;
     to?: string;
     link?: boolean;
+    disabled?: boolean;
 }
 
 
 const Button:FC<Props> = (props) => {
     let button = (
         <button 
+        disabled={props.disabled}
         onClick={props.clicked}
         className={[classes.Button, classes[props.btnType]].join(' ')}>
             {props.children}
@@ -22,26 +24,34 @@ const Button:FC<Props> = (props) => {
     )
 
     if(props.hashLink) {
-        button = (<button 
+        button = (
+        <button 
+        disabled={props.disabled}
         onClick={props.clicked}
         className={[classes.Button, classes[props.btnType]].join(' ')}>
-            <Link 
-            to={'#'+props.to}
-            smooth>
-                {props.children}
-            </Link> 
-        </button> )
+            {props.disabled ? props.children : 
+                <Link 
+                to={'#'+props.to}
+                smooth>
+                    {props.children}
+                </Link>
+            } 
+        </button> 
+        )
     }
     else if(props.link) {
         button = (
-            <button 
+            <button
+            disabled={props.disabled}
             onClick={props.clicked}
             className={[classes.Button, classes[props.btnType]].join(' ')}>
-                <a 
-                target='blank'
-                href={props.to}>
-                    {props.children}
-                </a> 
+                {props.disabled ? props.children : 
+                    <a 
+                    target='blank'
+                    href={props.to}>
+                        {props.children}
+                    </a> 
+                }
             </button> 
         )
     }

@@ -60,13 +60,13 @@
 
 .ImageDiv {
   position: relative;
-  width: 370px;
-  height: 412px;
+  width: 270px;
+  height: 312px;
 }
 
 .ImageDiv button {
   position: absolute;
-  transform: translate(-120%, 90%);
+  transform: translate(-90%, 90%);
 }
 
 .MainImage {
@@ -118,20 +118,22 @@
     font-size: 16px;
   }
 
-  .ImageDiv {
-    width: 270px;
-    height: 312px;
-  }
-
-  .ImageDiv button {
-    transform: translate(-90%, 90%);
-  }
-
   .Links {
     width: 270px;
   }
 
   .AboutMeButton {
     width: 270px;
+  }
+}
+
+@media (min-width: 827px) {
+  .ImageDiv {
+    width: 370px;
+    height: 412px;
+  }
+
+  .ImageDiv button {
+    transform: translate(-125%, 110%);
   }
 }

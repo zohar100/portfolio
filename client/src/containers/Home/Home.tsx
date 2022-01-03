@@ -45,9 +45,10 @@ return (
                 href="https://github.com/zohar100">
                 Github </ImageLink>
                 <ImageLink 
+                download
                 target={'blank'}
                 svg={() => <ResumeIcon/>}
-                href="https://github.com/">
+                href="/files/zohar-banai.pdf">
                 Resume </ImageLink>
             </div>
             <div className={classes.AboutMeButton}>
