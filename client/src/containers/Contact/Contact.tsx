@@ -82,7 +82,7 @@ const Contact:FC = () => {
         {successMsgModal}
         <div className={classes.Headers}>
             <h1>Contact Me</h1>
-            <span>Send me a message, make sure I will answer!</span>
+            <span>Send me a message, rest assured I will answer!</span>
         </div>
         <div className={classes.ContactDiv}> 
             <div className={classes.ContactIllustration} data-aos="fade-right">

@@ -42,6 +42,7 @@
         "name": "Portfilio",
         "technologies": ["nodejs", "react", "express", "typescript", "mongodb", "css"],
         "description": "My portfilio website, built with React-typescript, Nodejs MongoDB.",
-        "repository": "https://github.com/zohar100/techzone"
+        "repository": "https://github.com/zohar100/techzone",
+        "live": "https://www.zohar-banai.dev/"
     }
 ]
