@@ -22,7 +22,7 @@ const Footer:FC = () => (
             download
             target={'blank'}
             svg={()=><ResumeIcon color="white"/>}
-            href="/files/zohar-banai-resume.pdf"/>
+            href={process.env.PUBLIC_URL + '/files/zohar-banai-resume.pdf'}/>
         </div>
     </div>
 );
