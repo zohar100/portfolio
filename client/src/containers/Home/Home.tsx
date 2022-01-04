@@ -48,7 +48,7 @@ return (
                 download
                 target={'blank'}
                 svg={() => <ResumeIcon/>}
-                href="/files/zohar-banai.pdf">
+                href="/files/zohar-banai-resume.pdf">
                 Resume </ImageLink>
             </div>
             <div className={classes.AboutMeButton}>
